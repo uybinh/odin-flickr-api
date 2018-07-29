@@ -1,0 +1,7 @@
+document.querySelector("div.all-images")
+images.parentNode.removeChild(images)
+
+images = document.createElement("div")
+images.classList.add("all-images")
+images.innerHTML = "<%= escape_javascript(render('staticpages/images')) %>"
+document.querySelector("body").appendChild(images)

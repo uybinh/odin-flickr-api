@@ -1,0 +1,7 @@
+<h1>Flickr API</h1>
+
+<%= form_tag :search, remote: true do %>
+  <%= label_tag :text %>
+  <%= text_field_tag :text, nil, required: true %>
+  <%= submit_tag "submit" %>
+<% end %>
