@@ -1,7 +1,8 @@
 <h1>Flickr API</h1>
 
-<%= form_tag :search, remote: true do %>
-  <%= label_tag :text %>
-  <%= text_field_tag :text, nil, required: true %>
+<%= form_for :search, url: "/search", remote: true do |f| %>
+  <%= f.label :text %>
+  <%= f.text_field :text, required: true %>
+  <%= f.select :num_images, [5,10,15,20]%>
   <%= submit_tag "submit" %>
 <% end %>

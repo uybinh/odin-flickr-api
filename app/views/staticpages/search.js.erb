@@ -1,5 +1,7 @@
-document.querySelector("div.all-images")
-images.parentNode.removeChild(images)
+images = document.querySelector("div.all-images")
+if (images) {
+  images.parentNode.removeChild(images)
+}
 
 images = document.createElement("div")
 images.classList.add("all-images")

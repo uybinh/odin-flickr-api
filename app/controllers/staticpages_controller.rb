@@ -6,9 +6,10 @@ class StaticpagesController < ApplicationController
 
   def search
     args = {}
-    args[:text] = params[:text]
-    @images = flickr.photos.search(args).to_a[0..9].map {|img| FlickRaw.url img }
-    puts @images
+    num_images = params[:search][:num_images].to_i
+    args[:text] = params[:search][:text]
+    @images = flickr.photos.search(args).to_a.slice(0,num_images)
+
     respond_to do |format|
       format.js
     end
